@@ -1,8 +1,9 @@
-编程的学习学无止境，只掌握一门语言是远远不够的，现在我们开始C++的学习之路，下面先看下C++ 与C 的区别
 一、C++概述
+
 1、发展历史
       1980年，Bjarne Stroustrup博士开始着手创建一种模拟语言，能够具有面向对象的程序设计特色。在当时，面向对象编程还是一个比较新的理念，Stroustrup博士并不是从头开始设计新语言，而是在C语言的基础上进行创建。这就是C++语言。
      1985年，C++开始在外面慢慢流行。经过多年的发展，C++已经有了多个版本。为次，ANSI和ISO的联合委员会于1989年着手为C++制定标准。1994年2月，该委员会出版了第一份非正式草案，1998年正式推出了C++的国际标准。
+
 2、C和C++
       C++是C的超集，也可以说C是C++的子集，因为C先出现。按常理说，C++编译器能够编译任何C程序，但是C和C++还是有一些小差别。
       例如C++增加了C不具有的关键字。这些关键字能作为函数和变量的标识符在C程序中使用，尽管C++包含了所有的C，但显然没有任何C++编译器能编译这样的C程序。
@@ -15,7 +16,7 @@
 二、关键字和变量
       C++相对与C增加了一些关键字，如下：
       typename bool dynamic_cast mutable namespace
-      static_cast using catch explicit new
+      static_cast using catch explicit new
       virtual operator false private template
       volatile const protected this wchar_t
       const_cast public throw friend true
