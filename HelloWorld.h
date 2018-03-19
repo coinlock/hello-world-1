@@ -1,6 +1,16 @@
 #ifndef _HELLO_WORLD_
 #define _HELLO_WORLD_
-class HelloWorld {
+
+#include<iostream>
+using namespace std;
+
+class HelloWorld 
+{
+  public:
+    void Print()
+    {
+      cout<<"Hello World."<<endl;
+    }
   
 };
 #endif
