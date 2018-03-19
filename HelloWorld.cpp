@@ -1,5 +1,7 @@
 #include "HelloWorld.h"
-int main() {
+int main() 
+{
   HelloWorld hw;
+  hw.Print();
   return 0;
 }
