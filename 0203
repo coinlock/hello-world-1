@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class M
+{
+public:
+    void A(int n1,int K1)
+    {
+        n=n1;
+        K=K1;
+    }
+    int B(int a[100])
+    {
+        for(i=0;i<n-1;i++)
+    {
+		index=i;
+		for(j=i+1;j<n;j++)
+		    if(a[j]<a[index])
+				index=j;
+		if(i!=index)
+		{
+		  tem=a[i];
+		  a[i]=a[index];
+		  a[index]=tem;
+		}
+	}
+    // 排序
+	cout<<a[K-1];//输出结果
+
+
+    }
+    private:
+    int n,i,K,j,tem,index;
+
+};
+int main()
+ {
+    int n,K,i;
+    int a[100] ={0};
+    cin>>n>>K;  // 有n组数据
+    for (i = 0; i < n; i++) {
+       cin>>a[i];// 读入N整数
+    }
+    M a1;
+    a1.A(n,K);
+    a1.B(a);
+
+    return 0;
+}
