@@ -1,0 +1,27 @@
+#include<iostream>  
+using namespace std;  
+int main()  
+{  
+   
+      int n,a[200001];  
+     
+      cin>>n;  
+      for(int i=0;i<n;++i)  
+      cin>>a[i];  
+      int temp=0,max=-10000,k=1;  
+      for(int j=0;j<n;++j)  
+      {  
+      temp=temp+a[j];                    //子段之间的相加  
+      if(temp>max)  
+      {  
+      max=temp;                              //保存最大值的信息  
+      }  
+      if(temp<0)                         //舍弃之前的子段  
+      {  
+                temp=0;  
+      }  
+      }  
+      cout<<max<<endl;  
+
+    return 0;  
+}  
