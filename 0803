@@ -1,0 +1,81 @@
+// File Name: 1120.cpp  
+// Author: bo_jwolf  
+//Created Time: 2014年 02月 05日 星期三 15点07分2秒   
+  
+#include<vector>  
+#include<list>  
+#include<map>  
+#include<set>  
+#include<deque>  
+#include<stack>  
+#include<bitset>  
+#include<algorithm>  
+#include<functional>  
+#include<numeric>  
+#include<utility>  
+#include<sstream>  
+#include<iostream>  
+#include<iomanip>  
+#include<cstdio>  
+#include<cmath>  
+#include<cstdlib>  
+#include<cstring>  
+#include<ctime>  
+  
+using namespace std;  
+const int maxn = 10005;  
+int num[ maxn ], temp[ maxn ], tempn;  
+  
+int main(){  
+    int Case, n, x;  
+    while( cin >> Case ){  
+        n = Case / 8;  
+        int len = 0, ans = 0;  
+        memset( num, 0, sizeof( num ) );  
+        for( int i = 0; i < n; ++i ){  
+            cin >> tempn;  
+            int k = 0;  
+            memset( temp, 0, sizeof( temp ) );  
+            while( tempn ){  
+                temp[ k++ ] = tempn % 2;  
+                tempn /= 2;  
+            }  
+            ans++;  
+            x = k - 1;  
+            for( int j = ans * 8 - k; x >= 0; j++, x-- ){  
+                num[ j ] = temp[ x ];  
+            }  
+        }  
+  
+        int flag = 1, sum;  
+        for( int i = 0; i < ans * 8; ++i ){  
+                sum = 0;  
+            if( num[ i ] == 0 ){  
+                while( num[ i ] == 0 && i < ans * 8 ){  
+                    sum++;  
+                    i++;  
+                }  
+                i--;  
+                if( flag )  
+                    cout << sum;  
+                else  
+                    cout << " " << sum;  
+                flag = 0;  
+            }  
+            else{  
+                while( num[ i ] == 1 && i < ans * 8 ){  
+                    sum++;  
+                    i++;      
+                }  
+                i--;  
+                if( flag )  
+                    cout << sum + 128;  
+                else  
+                    cout << " " << sum + 128;  
+                flag = 0;     
+            }  
+        }  
+        cout << endl;  
+    }  
+    return 0;  
+}  
