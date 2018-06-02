@@ -1,0 +1,36 @@
+#include<iostream>  
+using namespace std;
+int main()  
+{  
+int k;  
+    int a,i,m,n;  
+    int j;  
+    char b[65][20];  
+    cin>>a;//总人数  
+    for(i=0;i<a;i++)  
+       cin>>b[i];  
+    cin>>m>>n;  
+    j=m-2;//由于为数组方式接受的并且在下面循环中先执行加一功能。  
+    for(i=0;i<a;i++)//总输出数，执行次数  
+    {  
+        for(k=0;k<n;k++)//一个选择执行的步数。  
+        {  
+            j++;//由于起始位置不一定是开始。所以再定义一个数接受变化。  
+           if(j>=a)  
+  
+            j%=a;//如果超过范围回到起点。  
+            if(b[j][18]==1)//判定是否标记。  
+            {  
+  
+            k--;//超过范围，步数取消。  
+            continue;  
+            }  
+            else  
+            continue;  
+  
+        }  
+       cout<<b[j];  
+        b[j][18]=1;//标记。  
+    }  
+    return 0;  
+}  
