@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+
+int d=0; 
+void hanoi(int n,char A,char B,char C)  
+{ 
+    if(n==1)  
+        {
+        cout<<A<<"->"<<C<<endl;
+		
+        d++;}
+    else  
+    {  
+        hanoi(n-1,A,C,B);  
+        cout<<A<<"->"<<C<<endl;
+      
+        d++;
+        hanoi(n-1,B,A,C);  
+    }  
+}  
+int main()  
+{  
+    int n;  
+    cin>>n;
+   
+        hanoi (n,'A','B','C');  
+       cout<<d;
+return 0;
+      
+}  
