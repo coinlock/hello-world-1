@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n,i,x,xx;
+	int A[1000];
+	char a;
+	x=0;
+	xx=0;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cin>>a;
+		if(a=='I')
+		{
+			cin>>A[x];
+			x++;
+			
+			
+		}else{
+			cout<<A[xx]<<endl;
+			xx++;
+			
+		}
+		
+		if(x==1000)
+		{
+		
+			x=0;
+		}
+		if(xx==1000)
+		{
+			xx=0;
+		}
+		
+	}
+	
+	return 0;
+	
+}
