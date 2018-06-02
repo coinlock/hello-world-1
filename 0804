@@ -1,0 +1,70 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+
+using namespace std;
+
+//下标：时间，钥匙编号，是取是还
+//typedef map<pair<int,int>,int> MapPair;
+struct Node{
+    int time,key,isget;
+    Node(int t, int k, int s):time(t),key(k),isget(s){}
+    Node(){}
+}; 
+
+bool comp(const Node& a, const Node& b){
+    if(a.time<b.time){
+        return true;
+    }else if(a.time==b.time && a.isget<b.isget){
+        return true;
+    }else if(a.time==b.time && a.isget==b.isget && a.key<b.key){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+int main(){
+
+    int N,K;
+    cin>>N>>K;
+    vector<int> hang;
+    for(int i=0; i<=N; i++){
+        hang.push_back(i);
+    }
+
+    int w,s,c,k=K;
+    vector<Node> node;
+    while(k>0){
+        cin>>w>>s>>c;
+        c += s;
+//      取为1
+//        classList[make_pair(s,w)] = 1;
+//        classList[make_pair(c,w)] = 0;
+        node.push_back(Node(s,w,1));
+        node.push_back(Node(c,w,0));
+        k--;
+    }
+    sort(node.begin(),node.end(),comp);
+
+    struct Node curNode;
+    vector<int>::iterator iter;
+    for(vector<Node>::iterator it=node.begin(); it!=node.end(); it++){
+        curNode = *it;
+        if(curNode.isget==1){
+            iter = find(hang.begin(),hang.end(), curNode.key);
+            (*iter) = -1;
+        }else{
+            iter = find(hang.begin(),hang.end(), -1);
+            (*iter) = curNode.key;
+        }
+    }
+
+    for(int j=1; j<=N; j++){
+        cout<<hang[j]<<" ";
+    }
+
+    return 0;
+}
