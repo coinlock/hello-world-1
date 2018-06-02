@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int a[] = {1, 2, 4, 3};
+int b[] = {1, 1, 2, 6, 4};
+int solve(int n)
+{if(n < 5) return b[n]; 
+int t = n%5, k = n/5; 
+return a[k%4]*solve(t)%5*solve(k)%5; } 
+int main()
+
+{
+	int ii,i,n;
+	scanf("%d",&n) ;
+	for(i=0;i<n;i++)
+	{
+	
+scanf("%d",&ii);
+ int ans = solve(ii); 
+if(ans&1) ans =(ans+5)%10; 
+printf("%d\n", ans);
+}
+return 0; }
