@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#define N 1001
+ 
+char x[N], y[N];
+ 
+int max(int a, int b){
+    return a > b ? a : b;
+}
+ 
+int f(int lenx, int leny)
+{
+    if(lenx == 0 || leny == 0)
+        return 0;
+    if(x[lenx - 1] == y [leny - 1])
+        return 1 + f(lenx - 1, leny - 1);
+    else
+        return max(f(lenx - 1, leny), f(lenx, leny - 1));
+}
+ 
+int main()
+{
+    int n, lenx, leny, ans;
+   
+        scanf(" %s %s", x, y);
+        lenx = strlen(x);
+        leny = strlen(y);
+        ans = f(lenx, leny);
+        printf("%d\n", ans);
+    
+ 
+    return 0;
+}
