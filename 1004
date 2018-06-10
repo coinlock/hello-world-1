@@ -1,0 +1,35 @@
+#include<cmath>
+#include<iostream>
+#include<cstring>
+#include<cstdio>
+using namespace std;
+
+
+int main()
+{
+    int nn;
+    int deadpool[30];
+    while(cin>>nn)
+    {
+        if(nn==0)
+            break;
+        int M=0;
+        int aa[30];
+        for(int ii=0;ii<nn;ii++)
+            cin>>aa[ii];
+        memset(deadpool,0,sizeof(deadpool));
+        for(int ii=0;ii<nn;ii++)
+        {
+            deadpool[ii]=1;
+            for(int jj=0;jj<ii;jj++)
+            {
+                if(aa[ii]<=aa[jj]&&deadpool[ii]<deadpool[jj]+1)
+                    deadpool[ii]=deadpool[jj]+1;
+            }
+            if(deadpool[ii]>deadpool[M])
+                M=ii;
+        }
+        cout<<deadpool[M];
+    }
+    return 0;
+}
