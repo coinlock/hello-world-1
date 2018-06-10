@@ -1,0 +1,44 @@
+#include<iostream>  
+#include<string.h>  
+#include<math.h>  
+using namespace std;  
+
+
+void A(int yyy)  
+{  
+     int xxx,bbb;  
+     xxx=0;  
+     while(pow(2,xxx)<=yyy)  
+     {  
+                        xxx++;  
+                        }  
+                        xxx--;  
+                        if(xxx==0)  
+                        {  
+                                  cout<<"2(0)";  
+                                  }  
+                                  else if(xxx==1)  
+                                  {  
+                                       cout<<"2";  
+                                       }  
+                                       else{                                        
+                                       cout<<"2(";  
+                                       A(xxx);  
+                                       cout<<")";  
+                                       }  
+                                       bbb=yyy-pow(2,xxx);  
+                                       if(bbb!=0)  
+                                       {  
+                                               cout<<"+";  
+                                               A(bbb);  
+                                               }  
+                                               }  
+                                        int main()  
+                                        {  
+                                            int nnn;  
+                                            while(cin>>nnn)  
+                                            {  
+                                                         A(nnn);  
+                                                         cout<<endl;  
+                                                         }  
+                                                         }  
