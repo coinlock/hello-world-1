@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int A(int mmm,int nnn)
+{
+   if(mmm==0||nnn==1)  return 1;
+   if(mmm<nnn) return A(mmm,mmm);
+   else return A(mmm,nnn-1)+A(mmm-nnn,nnn);
+}
+int main()
+{
+  int aaa,bbb;
+  cin>>aaa>>bbb;
+  cout<<A(aaa,bbb)<<endl;
+ return 0;
+}
