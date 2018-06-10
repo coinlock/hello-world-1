@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std; 
+
+int main()
+{  
+    long long N,num,i,i1,ss,rr;  
+    cin>>N;
+     
+        for(i=0;i<N;i++)
+		{  
+            cin>>num;  
+            ss = 1;  
+            for (i1 = 2; i1 * i1 <= num; i1++) {  
+                rr = 0;  
+                while (num % i1 == 0) {  
+                    rr++;  
+                    num /= i1;  
+                }  
+                if (rr > 0) {  
+                    rr++;  
+                    ss= ss*rr;  
+                }  
+            }  
+            if (num > 1)  
+                ss=ss*2;  
+            cout<<ss<<endl;
+        }  
+        
+    
+     
+    
+    return 0;
+}  
