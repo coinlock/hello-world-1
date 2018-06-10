@@ -1,0 +1,183 @@
+#include <iomanip>
+#include <iostream>
+#include <cstring>
+#include <cmath>
+#include <algorithm>
+#include <stdio.h>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+   string ssss1,ssss2;
+
+   int aaaa[100], bbbb[100], ssss[100];
+
+   int cntttt = 0,q,chhhh[25];
+
+   for(int iiii = 2; iiii < 100; iiii++)
+
+    {
+
+       q = 0;
+
+       for(int jjjj = 2; jjjj < iiii; jjjj++)
+
+       {
+
+           if(iiii % jjjj == 0)
+
+           {
+
+                q = 1;
+
+                break;
+
+           }
+
+       }
+
+       if(q == 0)
+
+           chhhh[cntttt] = iiii,
+
+           cntttt++;
+
+       if(cntttt == 25)
+
+           break;
+
+   }
+
+   while(cin >> ssss1 >> ssss2)
+
+    {
+
+       memset(aaaa, 0, sizeof aaaa);
+
+       memset(bbbb, 0, sizeof bbbb);
+
+       memset(ssss, 0, sizeof ssss);
+
+       int kkkk = 0, llll1 = 0, llll2 = 0, maxxxx = 0, minnnn = 0, cntttt = 0, anssss = 0, tttt =0;
+
+       llll1 = ssss1.length();
+
+       llll2 = ssss2.length();
+
+       for(int iiii = 0; iiii < llll1; iiii++)
+
+       {
+
+           if(ssss1[iiii] != ',')
+
+                aaaa[cntttt] = aaaa[cntttt] * 10 + (ssss1[iiii] -'0');
+
+           else if(ssss1[iiii] == ',')
+
+                cntttt++;
+
+       }
+
+       for(int iiii = 0; iiii < llll2; iiii++)
+
+       {
+
+           if(ssss2[iiii] != ',')
+
+                bbbb[anssss] = bbbb[anssss] * 10 + (ssss2[iiii] -'0');
+
+           else if(ssss2[iiii] == ',')
+
+                anssss++;
+
+       }
+
+       if(cntttt == 0 && anssss == 0 && aaaa[0] == 0 && bbbb[0] ==0)
+
+           break;
+
+       for(int iiii = 0, jjjj = cntttt; iiii < jjjj; iiii++, jjjj--)
+
+       {
+
+           int midddd = aaaa[iiii];
+
+           aaaa[iiii] = aaaa[jjjj];
+
+           aaaa[jjjj] = midddd;
+
+        }
+
+        for(int iiii = 0, jjjj = anssss; iiii < jjjj; iiii++, jjjj--)
+
+        {
+
+            int midddd = bbbb[iiii];
+
+            bbbb[iiii] = bbbb[jjjj];
+
+            bbbb[jjjj] = midddd;
+
+        }
+
+       maxxxx = max(cntttt, anssss);
+
+       for(int iiii = 0; iiii <= maxxxx; iiii++)
+
+       {
+
+           ssss[tttt] = kkkk + aaaa[iiii] + bbbb[iiii];
+
+           if(ssss[tttt] >= chhhh[tttt])
+
+           {
+
+                ssss[tttt] = ssss[tttt] - chhhh[tttt];
+
+                kkkk = 1;
+
+                tttt++;
+
+           }
+
+           else if(ssss[tttt] < chhhh[tttt])
+
+           {
+
+                kkkk = 0;
+
+                tttt++;
+
+           }
+
+       }
+
+       if(kkkk != 0)
+
+           ssss[tttt] = kkkk;
+
+        else
+
+           tttt = tttt - 1;//判断最后一位是否有进位
+
+       for(int iiii = tttt; iiii >= 0; iiii--)
+
+       {
+
+           if(iiii > 0)
+
+                cout << ssss[iiii] <<",";
+
+           else if(iiii == 0)
+
+                cout << ssss[iiii] <<endl;
+
+       }
+
+    }
+
+   return 0;
+
+}
