@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a,n,q_jin,nn,i,he,x1_jin,x1_yu,zan,x2_yu,x2_jin,x,weishu,xx;
+	int A[1000];
+	cin>>a>>n;
+	q_jin=0;
+	nn=n;
+	x=0;
+	for(i=0;i<n;i++)
+	{
+		he=nn*a;
+		nn--;
+		x1_jin=he/10;
+		x1_yu=he%10;
+		
+		zan=x1_yu+q_jin;
+		x2_yu=zan%10;
+		x2_jin=zan/10+x1_jin;
+		A[x]=x2_yu;
+		x++;
+		q_jin=x2_jin;
+		
+	}
+	weishu=x;
+	if(q_jin!=0)
+	{
+		A[x]=q_jin;
+		weishu=x+1;
+	}
+	xx=weishu-1;
+	
+	for(i=0;i<weishu;i++)
+	{
+		cout<<A[xx];
+		xx--;
+	}
+	
+	return 0;
+}
