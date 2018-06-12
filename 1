@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+void get_next(char str[],int next[],int len) {
+    next[0]=-1;
+    int k=-1,j=0;
+    while(j<len) {
+        if(k==-1||str[k]==str[j]){
+            k++;j++;
+            next[j]=k;
+        }
+        else k=next[k];
+    }
+}
+
+int main() {
+    char str[1000000];
+    scanf("%s",str);
+    while(str[0]!='.') {
+        int len=strlen(str);
+        int next[len+1];
+        for(int i=0;i<=len;i++)
+            next[i]=0;
+        get_next(str,next,len);
+        int n=next[len];
+        if(n!=0&&len%(len-n)==0)
+            printf("%d",len/(len-n));
+        else
+            printf("1");
+        printf("\n");
+        scanf("%s",str);
+    }
+}
