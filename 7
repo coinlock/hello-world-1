@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+struct road
+{
+    int a;
+    int b;
+    int cost;
+}r[101];
+int j[101];
+int foot(int x)
+{
+    if(j[x]==-1)
+        return x;
+    else{
+        int h;
+        h=foot(j[x]);
+        return h;
+    }
+}
+bool cmp(road x,road y)
+{
+    return x.cost<y.cost;
+
+}
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        if(n==0)
+            break;
+        else
+        {
+            int m;
+            cin>>m;
+            for(int i=1;i<=n;i++)
+            {
+                cin>>r[i].a>>r[i].b>>r[i].cost;
+            }
+
+            for(int i=1;i<=m;i++)
+            {
+                j[i]=-1;
+            }
+            sort(r+1,r+n+1,cmp);
+            int remember=0;
+
+            for(int i=1;i<=n;i++)
+            {
+                int q,p;
+                q=foot(r[i].a);
+                p=foot(r[i].b);
+                if(p!=q)
+                {
+
+
+                    j[p]=q;
+                    remember=remember+r[i].cost;
+                }
+
+
+
+
+
+            }
+            int g=0;
+            for(int i=1;i<=m;i++)
+            {
+                if(j[i]==-1)
+                    g++;
+            }
+            if(g==1)
+            {
+                cout<<remember<<endl;
+            }
+            else
+            {
+                cout<<"?"<<endl;
+            }
+
+
+        }
+    }
+    int lll;
+    cin>>lll;
+    return 0;
+}
