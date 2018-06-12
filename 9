@@ -1,0 +1,29 @@
+#include<iostream>  
+#include<algorithm>  
+#include<fstream>  
+using namespace std;  
+int num[100001];  
+int main()  
+{  
+    ifstream in;  
+    in.open("4.txt");  
+    int n,m;  
+    while(in>>n>>m && n!=0 && m!=0)  
+    {  
+        for(int i=0;i<n;++i)  
+            in>>num[i];  
+        sort(num,num+n);  
+        if(m>=n)  
+        {  
+            for(int i=n-1;i>=1;--i)  
+                cout<<num[i]<<" ";  
+            cout<<num[0]<<endl;  
+        }else  
+        {  
+            for(int i=n-1;i>=n-m+1;--i)  
+                cout<<num[i]<<" ";  
+            cout<<num[n-m]<<endl;  
+        }  
+    }  
+    return 0;  
+}  
