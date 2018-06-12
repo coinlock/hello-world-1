@@ -1,0 +1,32 @@
+#include <iostream>  
+#include <cmath>  
+using namespace std;  
+  
+int df(int n)   
+{  
+    if (n < 2)  
+        return 0;  
+    if (n == 2 || n == 3)  
+        return 1;  
+    if (n % 6 != 1 && n % 6 != 5)   
+        return 0;  
+    int m = (int)sqrt(n) + 1;  
+    for (int i = 5; i < m; i += 6)   
+    {  
+        if (n % i == 0 || n % (i + 2) == 0)   
+            return 0;  
+    }  
+    return 1;  
+}  
+int main()  
+{  
+    int num,ans=0;  
+    cin >> num;  
+    for (int i = 2; i <=num/2; i++)  
+    {  
+        if (df(i) && df(num - i))  
+            ans++;  
+    }  
+    cout << ans;  
+    return 0;  
+}  
