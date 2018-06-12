@@ -1,0 +1,94 @@
+#include <iostream>  
+#include <algorithm>  
+#include <cstring>  
+using namespace std;  
+  
+int FindDot(string str){  
+    for(int i=0;i<str.length();i++){  
+        if(str[i] == '.'){  
+            return i;  
+        }  
+    }  
+    return -1;  
+}  
+  
+int main(){  
+    int n;  
+    cin>>n;  
+    string str1,str2;  
+    while(n--){  
+        cin>>str1>>str2;  
+        int dot1 = FindDot(str1);  
+        int len1 = str1.length() - dot1 - 1;  
+        int dot2 = FindDot(str2);  
+        int len2 = str2.length() - dot2 - 1;  
+        int dot = max(dot1,dot2);  
+        int len = max(len1,len2) + dot;  
+        int opera1[110];  
+        int opera2[110];  
+        int result[110];  
+        int Result[110];  
+        memset(opera1,0,sizeof(opera1));  
+        memset(opera2,0,sizeof(opera2));  
+        memset(result,0,sizeof(result));  
+        memset(Result,0,sizeof(Result));  
+        int tmp1 = dot1,tmp2 = dot2;  
+        for(int i=dot-1;i>=0;i--){      //整数部分  
+            tmp1 --;  
+            if(tmp1<0)  
+                opera1[i] = 0;  
+            else  
+                opera1[i] = str1[tmp1] - '0';  
+            tmp2 --;  
+            if(tmp2<0)  
+                opera2[i] = 0;  
+            else  
+                opera2[i] = str2[tmp2] - '0';  
+        }  
+        for(int i=dot;i<len;i++){    //小数部分  
+            if(dot1>=str1.length()-1)  
+                opera1[i] = 0;  
+            else  
+                opera1[i] = str1[++dot1] - '0';  
+            if(dot2>=str2.length()-1){  
+                 opera2[i] = 0;  
+            }  
+            else  
+                opera2[i] = str2[++dot2] - '0';  
+        }  
+        for(int i=len;i>=0;i--){    //相加  
+            int temp = result[i] + opera1[i-1] + opera2[i-1];  
+            result[i] = temp % 10;  
+            result[--i] = temp / 10;  
+            i++;  
+        }  
+        int j = 0;  
+        int k = len;  
+        while(j<max(len1,len2)){  
+            Result[k+1] = result[k];    //Result保存最终结果，给小数点腾出一位  
+            k--;  
+            j++;  
+        }  
+        Result[k+1] = -1;     //小数点位置设置为－1  
+        Result[k] = result[k];   //整数部分至少留一位  
+        j = 0;  
+        while(result[j]==0 && j<k){    //整数部分的前面多余的0去掉  
+            j++;  
+        }  
+        for(int i=j;i<k;i++){  
+            Result[i] = result[i];   //整数部分保持不动  
+        }  
+        k = len+1;  
+        while(Result[k]==0){    //小数点后面多余的0去掉  
+             k--;  
+        }  
+        for(int i=j;i<=k;i++){  
+            if(Result[i] == -1)  
+                cout<<".";  
+            else  
+            cout<<Result[i];  
+        }  
+        cout<<endl;  
+    }  
+    return 0;  
+}  
