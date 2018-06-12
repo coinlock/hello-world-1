@@ -1,0 +1,40 @@
+#include <iostream>  
+#include <stack>  
+using namespace std;  
+  
+int main(){  
+    string str;  
+    stack<char>s;  
+    stack<int>index_s;  
+    char result[105];   //存放结果  
+    while(cin>>str){  
+        while(!s.empty()){  
+            s.pop();  
+        }  
+        for(int i=0;i<105;i++)  
+            result[i] = ' ';  
+        for(int i=0;i<str.length();i++){  
+            if(str[i] == ')'){  
+                if(s.empty())  
+                    result[i] = '?';  
+                else{  
+                    s.pop();  
+                    index_s.pop();  
+                }  
+            }  
+            if(str[i] == '('){  
+                s.push(str[i]);  
+                index_s.push(i);  
+            }  
+        }  
+        while(!index_s.empty()){  
+            result[index_s.top()] = '$';  
+            index_s.pop();  
+        }  
+        cout<<str<<endl;  
+        for(int i=0;i<str.length();i++)  
+            cout<<result[i];  
+        cout<<endl;  
+    }  
+    return 0;  
+}  
