@@ -1,0 +1,45 @@
+#include <iostream>  
+using namespace std;  
+  
+int main(){  
+    int Ca,Cb,N;  
+    while(cin>>Ca>>Cb>>N){  
+        int stateA=0,stateB=0;  //表示A，B罐头内水容量的状态  
+        if(Ca < N){  //condition 1  
+            while(stateB!=N){  
+                cout<<"fill B"<<endl;  
+                stateB = Cb;  
+                if(stateB == N)  
+                    break;  
+                cout<<"pour B A"<<endl;  
+                stateB = Cb - (Ca - stateA);  
+                stateA = Ca;  
+                if(stateB == N)  
+                    break;  
+                do{  
+                    cout<<"empty A"<<endl;  
+                    cout<<"pour B A"<<endl;  
+                    stateB = stateB - Ca;  
+                }while(stateB>0);  
+                stateA = Ca + stateB;  
+                stateB = 0;  
+            }  
+        }  
+        else{     //condition 2  
+            while(stateB!=N){  
+                do{  
+                    cout<<"fill A"<<endl;  
+                    cout<<"pour A B"<<endl;  
+                    stateB += Ca;  
+                }while(stateB <= Cb);  
+                stateA = stateB - Cb;  
+                cout<<"empty B"<<endl;  
+                stateB = 0;  
+                cout<<"pour A B"<<endl;  
+                stateB = stateA;  
+            }  
+        }  
+        cout<<"success"<<endl;  
+    }  
+    return 0;  
+}  
