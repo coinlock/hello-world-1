@@ -1,0 +1,55 @@
+#include <iostream>  
+#include <stdio.h>  
+#include <cstring>  
+using namespace std;  
+  
+int matrix[110][110];  
+int temp[110];  
+int n;  
+  
+void mergeMatrix(int a,int b){     //合并成一维数组  
+    memset(temp,0,sizeof(temp));  
+    for(int i=0;i<n;i++){  
+        int sum = 0;  
+        for(int j=a;j<=b;j++){  
+            sum += matrix[i][j];  
+        }  
+        temp[i] = sum;  
+    }  
+}  
+  
+int MaxSequenceMatrix(){   //一维数组最大连续子序列和  
+    int t = 0;  
+    int maxx = -128;  
+    for(int i=0;i<n;i++){  
+        if(t > 0)  
+            t += temp[i];  
+        else  
+            t = temp[i];  
+        if(t > maxx)  
+            maxx = t;  
+    }  
+    return maxx;  
+}  
+  
+int main(){  
+    while(scanf("%d",&n)!=EOF){  
+        memset(matrix,0,sizeof(matrix));  
+        for(int i=0;i<n;i++){  
+            for(int j=0;j<n;j++)  
+                cin>>matrix[i][j];  
+        }  
+        int max = -128;  
+        int matrixValue = 0;  
+        for(int i=0;i<n;i++){  
+            for(int j=0;j<n;j++){  
+                mergeMatrix(i,j);  
+                matrixValue = MaxSequenceMatrix();  
+                if(matrixValue > max)  
+                    max = matrixValue;  
+            }  
+        }  
+        cout<<max<<endl;  
+    }  
+    return 0;  
+}  
