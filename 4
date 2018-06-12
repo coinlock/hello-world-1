@@ -1,0 +1,33 @@
+#include<stdio.h>  
+int main()  
+{  
+    int a[10],b[10],m,n,x=0,i;  
+    scanf("%d",&m);  
+    for(i=0;i<m;i++)  
+    {  
+        scanf("%d",&a[i]);  
+        b[i]=a[i];  
+    }  
+    scanf("%d",&n);  
+    for(i=0;i<m;i++)  
+    {  
+        if(n==b[i])  
+        x++;  
+    }  
+        for(i=0;i<m;i++)  
+        {  
+        if(x==0)  
+        {  
+        printf("Not Found");break;    
+        }  
+        if(a[i]==n)  
+        {  
+            for(;;i++)  
+            {  
+            a[i]=b[i+1];if(i==m-1)break;  
+            printf("%4d",a[i]);  
+            }  
+        }  
+        else printf("%4d",a[i]);  
+        }     
+}  
