@@ -1,0 +1,1320 @@
+//单位转换器
+//刘雨卉 2017141461307
+
+#include<iostream>
+using namespace std;
+
+class danwei{
+public:
+    virtual double Get()=0;
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+//质量
+/////////////////////////////////////////////////////////////////////////////////
+class jiben: public danwei{
+public: 
+      double Get(){ return 1;}
+
+};//1
+
+class g: public danwei{
+public: 
+     double Get() { return 0.001;}
+     
+
+};//2
+
+class longton: public danwei{
+public: 
+      double Get(){ return 1016;}
+
+};//3
+
+class lb: public danwei{
+public: 
+      double Get(){ return 0.454;}
+
+};//4
+
+class oz: public danwei{
+public: 
+      double Get(){ return 0.02835;}
+
+};//5
+
+class shton: public danwei{
+public: 
+      double Get(){ return 907;}
+
+};//6
+
+class t: public danwei{
+public: 
+      double Get(){ return 1000;}
+
+};//7
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//长度
+//////////////////////////////// ///////////////////////////////////////////////////////////////////////
+class km: public danwei{
+public: 
+      double Get(){ return 1000;}
+
+};//8
+
+class mile: public danwei{
+public: 
+      double Get(){ return 1610.306;}
+
+};//9
+
+class ft: public danwei{
+public: 
+      double Get(){ return 0.304785;}
+
+};//10
+
+class yd: public danwei{
+public: 
+      double Get(){ return 0.91407678;}
+
+};//11
+
+class cm: public danwei{
+public: 
+      double Get(){ return 0.01;}
+
+};//12
+
+class dmmcmm: public danwei{
+public: 
+      double Get(){ return 0.0001;}
+
+};//13
+
+class in: public danwei{
+public: 
+      double Get(){ return 0.02538;}
+
+};//14
+
+class mm: public danwei{
+public: 
+      double Get(){ return 0.001;}
+
+};//15
+
+class nm: public danwei{
+public: 
+      double Get(){ return 0.000000001;}
+
+};//16
+
+class mium: public danwei{
+public: 
+      double Get(){ return 0.000001;}
+
+};//17
+
+class aimi: public danwei{
+public: 
+      double Get(){ return 0.0000000001;}
+
+};//18
+
+class fm: public danwei{
+public: 
+      double Get(){ return 1.829;}
+
+};//19
+
+class nmile: public danwei{
+public: 
+      double Get(){ return 1852;}
+
+};//20
+
+class lian: public danwei{
+public: 
+      double Get(){ return 20.1168;}
+
+};//21
+
+class mil: public danwei{
+public: 
+      double Get(){ return 0.0000254;}
+
+};//22
+
+class rad: public danwei{
+public: 
+      double Get(){ return 5.028954587;}
+
+};//23
+
+class li: public danwei{
+public: 
+      double Get(){ return 500;}
+
+};//24
+
+class zhang: public danwei{
+public: 
+      double Get(){ return 3.3333333333;}
+
+};//25
+
+class chi: public danwei{
+public: 
+      double Get(){ return 0.3333333333;}
+
+};//26
+
+class cun: public danwei{
+public: 
+      double Get(){ return 0.0333333333;}
+
+};//27
+
+class fen: public danwei{
+public: 
+      double Get(){ return 0.0033333333;}
+
+};//28
+
+class lili: public danwei{
+public: 
+      double Get(){ return 0.0003333333;}
+
+};//29
+
+class hao: public danwei{
+public: 
+      double Get(){ return 0.0000333333;}
+
+};//30
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//面积 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+class km2: public danwei{
+public: 
+      double Get(){ return 1000000;}
+
+};//31
+
+class ha: public danwei{
+public: 
+      double Get(){ return 10000;}
+
+};//32
+
+class mile2: public danwei{
+public: 
+      double Get(){ return 2590673.575;}
+
+};//33
+
+class acre: public danwei{
+public: 
+      double Get(){ return 4046.945;}
+
+};//34
+
+class ft2: public danwei{
+public: 
+      double Get(){ return 0.0929;}
+
+};//35
+
+class are: public danwei{
+public: 
+      double Get(){ return 100;}
+
+};//36
+
+class cm2: public danwei{
+public: 
+      double Get(){ return 0.0001;}
+
+};//37
+
+class in2: public danwei{
+public: 
+      double Get(){ return 0.0006452;}
+
+};//38
+
+class yd2: public danwei{
+public: 
+      double Get(){ return 0.8361;}
+
+};//39
+
+class mu: public danwei{
+public: 
+      double Get(){ return 666.667;}
+
+};//40
+
+class li2: public danwei{
+public: 
+      double Get(){ return 250000;}
+
+};//41
+
+class zhang2: public danwei{
+public: 
+      double Get(){ return 11.111;}
+
+};//42
+
+class chi2: public danwei{
+public: 
+      double Get(){ return 0.1111;}
+
+};//43
+
+class cun2: public danwei{
+public: 
+      double Get(){ return 0.001111;}
+
+};//44
+
+class fen2: public danwei{
+public: 
+      double Get(){ return 0.00001111;}
+
+};//45
+
+class lili2: public danwei{
+public: 
+      double Get(){ return 0.0000001111;}
+
+};//46
+
+class hao2: public danwei{
+public: 
+      double Get(){ return 0.00000000111;}
+
+};//47
+
+//////////////////////////////////////////////////////////////////////////
+//体积
+////////////////////////////////////////////////////////////////////////
+
+class liter: public danwei{
+public: 
+      double Get(){ return 0.001;}
+
+};//48
+
+class dm3: public danwei{
+public: 
+      double Get(){ return 0.001;}
+
+};//49
+
+class cm3: public danwei{
+public: 
+      double Get(){ return 0.000001;}
+
+};//50
+
+class mm3: public danwei{
+public: 
+      double Get(){ return 0.000000001;}
+
+};//51
+
+class ft3: public danwei{
+public: 
+      double Get(){ return 0.0283;}
+
+};//52
+
+class in3: public danwei{
+public: 
+      double Get(){ return 0.0000163817;}
+
+};//53
+
+class muchi: public danwei{
+public: 
+      double Get(){ return 1234;}
+
+};//54
+
+class bbl: public danwei{
+public: 
+      double Get(){ return 0.159;}
+
+};//55
+
+class mgal: public danwei{
+public: 
+      double Get(){ return 0.01325;}
+
+};//56
+
+class qt: public danwei{
+public: 
+      double Get(){ return 0.003785;}
+
+};//57
+
+class pt: public danwei{
+public: 
+      double Get(){ return 0.000473;}
+
+};//58
+
+class gi: public danwei{
+public: 
+      double Get(){ return 0.000118;}
+
+};//59
+
+class ygal: public danwei{
+public: 
+      double Get(){ return 0.004546;}
+
+};//60
+
+class dou: public danwei{
+public: 
+      double Get(){ return 0.01;}
+
+};//61
+
+class dan: public danwei{
+public: 
+      double Get(){ return 0.1;}
+
+};//62
+
+class hu: public danwei{
+public: 
+      double Get(){ return 0.05;}
+
+};//63
+
+class yue: public danwei{
+public: 
+      double Get(){ return 0.00005;}
+
+};//64
+
+class he: public danwei{
+public: 
+      double Get(){ return 0.0001;}
+
+};//65
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//密度
+//////////////////////////////////////////////////////////////////////////////////////////////
+ 
+class gcm3: public danwei{
+public: 
+      double Get(){ return 1000;}
+
+};//66
+
+class lbft3: public danwei{
+public: 
+      double Get(){ return 16.02564;}
+
+};//67
+
+class lbin3: public danwei{
+public: 
+      double Get(){ return 27679.9;}
+
+};//68
+
+class lbmgal3: public danwei{
+public: 
+      double Get(){ return 119.826;}
+
+};//69
+
+class lbygal3: public danwei{
+public: 
+      double Get(){ return 1000;}
+
+};//70
+
+class lbbbl3: public danwei{
+public: 
+      double Get(){ return 1000;}
+
+};//71
+
+////////////////////////////////////////////////////////////////////////////////////
+//力
+//////////////////////////////////////////////////////////////////////////////////// 
+class lbf: public danwei{
+public: 
+      double Get(){ return 4.444;}
+
+};//72
+
+class kgf: public danwei{
+public: 
+      double Get(){ return 9.8;}
+
+};//73
+
+class dayin: public danwei{
+public: 
+      double Get(){ return 0.00001;}
+
+};//74
+
+
+
+int main(){
+	double x1,x2;
+     danwei *p1;
+	 danwei *p2;   
+     double n1,aa,bb;
+     int n2,n3;
+     
+	 while(1)
+	 {
+	 
+     cout<<"这是可供选择的单位转化，每个对应单位有自己的编号："<<endl;
+     cout<<"质量： 1.千克（kg） 2.克（g） 3.长吨（long ton） 4.磅（lb） 5.盎司（oz） 6.短吨（sh.ton） 7.吨（t）"<<endl<<endl;
+     
+	 cout<<"长度： 1.米（m） 8.千米（km） 9.英里（mile） 10.英尺（ft） 11.码（yd） 12.厘米（cm） 13.丝米（dmm）"<<endl;
+	 cout<<"      13.忽米（cmm） 14.英寸（in） 15.毫米（mm） 16.纳米（nm） 17.微米（μm） 18.埃米 19.英寻（fm）"<<endl;
+	 cout<<"      20.海里（n mile） 21.链 22.密尔（mil） 23.杆（rad） 24.里 25.丈 26.尺 27.寸 28.分 29.厘 30.毫"<<endl<<endl;
+	 
+	 cout<<"面积：1.平方米（m^2） 31.平方公里（km^2） 32.公顷（ha） 33.平方英里（mile^2） 34.英亩（acre） 35.平方英尺（ft^2）"<<endl; 
+	 cout<<"      36.公亩（are） 37.平方厘米（cm^2） 38.平方英寸（in^2） 39.平方码（yd^2） 40.亩 41.平方里 42.平方丈"<<endl; 
+	 cout<<"      43.平方尺 44.平方寸 45.平方分 46.平方厘 47.平方毫"<<endl<<endl;
+	 
+	 cout<<"体积：1.立方米（m^3） 48.升（liter） 49.立方分米（dm^3) 50.立方厘米（cm^3）51.立方毫米（mm^3）52.立方英尺（ft^3）"<<endl;
+	 cout<<"      53.立方英寸（in^3） 54.英亩*英尺 55.桶（bbl） 56.美加仑（gal） 57.美夸脱（qt） 58.美品脱（pt）"<<endl;
+	 cout<<"      59.美吉耳（gi） 60.英加仑（gal） 61.斗 62.石 63.斛 64.龠 65.合"<<endl<<endl;
+	 
+	 cout<<"密度：1.千克/立方米 66.克/立方厘米 67.磅/立方英尺 68.磅/立方英寸 69.磅/立方美加仑 70.磅/立方英加仑 71.磅/立方桶"<<endl<<endl;
+	 
+	 cout<<"力： 1.牛顿（N） 72.磅力（lbf） 73.千克力（kgf） 74.达因" <<endl<<endl; 
+	  
+     
+     cout<<"请输入：原单位的值 原单位编号 现单位编号"<<endl;  
+     cin>>n1>>n2>>n3;
+  
+     switch(n2)    {
+       case 1:  {
+    
+		         jiben j;
+	            p1= &j; 
+                     break;}
+       case 2:  {
+      
+		        g j;
+	            p1= &j; 
+	          
+                     break;}
+       case 3:  {
+		        longton j;
+	          
+                     break;}
+       case 4:  {
+		         lb j;
+	            p1= &j; 
+	        
+                     break;}					                      
+       case 5:  {
+
+		         oz j;
+	            p1= &j; 
+	        
+                     break;} 
+       case 6:  {
+		        shton j;
+	            p1= &j; 
+	    
+                     break;}
+       case 7:  {
+		         t j;
+	            p1= &j; 
+	     
+                     break;}
+       case 8:  {
+       	
+		        km j;
+	            p1= &j; 
+	          
+                     break;}
+       case 9:  {
+ 
+		         mile j;
+	            p1= &j; 
+	           
+                     break;}
+       case 10:  {
+       	
+		         jiben j;
+	            p1= &j; 
+	          
+                     break;}
+       case 11:  {
+    
+		        yd j;
+	            p1= &j; 
+                     break;}
+       case 12:  {
+  
+		         cm j;
+	            p1= &j; 
+                     break;}
+       case 13:  {
+    
+		        dmmcmm j;
+	            p1= &j; 
+	       
+                     break;}
+       case 14:  {
+     
+		      in j;
+	            p1= &j; 
+                     break;}
+       case 15:  {
+
+		        mm j;
+	            p1= &j; 
+                     break;}
+       case 16:  {
+      
+		        nm j;
+	            p1= &j; 
+                     break;}
+       case 17:  {
+       	
+		         mium j;
+	            p1= &j; 
+	            cout<<p1->Get()<<endl;
+                     break;}
+       case 18:  {
+      
+		         aimi j;
+	            p1= &j; 
+                     break;}
+       case 19:  {
+
+		      fm j;
+	            p1= &j; 
+                     break;}
+       case 20:  {
+ 
+		    nmile j;
+	            p1= &j; 
+                     break;}
+       case 21:  {
+  
+		        lian j;
+	            p1= &j; 
+                     break;}
+       case 22:  {
+   
+		        mil j;
+	            p1= &j; 
+                     break;}
+       case 23:  {
+
+		         rad j;
+	            p1= &j; 
+                     break;}
+       case 24:  {
+ 
+		      li j;
+	            p1= &j; 
+                     break;}
+       case 25:  {
+		        zhang j;
+	            p1= &j; 
+                     break;}
+       case 26:  {
+     
+		        chi j;
+	            p1= &j; 
+                     break;}
+       case 27:  {
+       
+		         cun j;
+	            p1= &j; 
+                     break;}
+       case 28:  {
+      
+		      fen j;
+	            p1= &j; 
+                     break;}
+       case 29:  {
+   
+		        lili j;
+	            p1= &j; 
+                     break;}
+       case 30:  {
+     
+		       hao j;
+	            p1= &j; 
+                     break;}
+       case 31:  {
+ 
+		         km2 j;
+	            p1= &j; 
+                     break;}
+       case 32:  {
+      
+		        ha j;
+	            p1= &j; 
+                     break;}
+       case 33:  {
+
+		      mile2 j;
+	            p1= &j; 
+                     break;}
+       case 34:  {
+  
+		        acre j;
+	            p1= &j; 
+                     break;}                     
+       case 35:  {
+    
+		        ft2 j;
+	            p1= &j; 
+                     break;}
+       case 36:  {
+ 
+		         are j;
+	            p1= &j; 
+                     break;}
+       case 37:  {
+      
+		        cm2 j;
+	            p1= &j; 
+                     break;}
+       case 38:  {
+     
+		        in2 j;
+	            p1= &j; 
+                     break;}
+       case 39:  {
+       
+		         yd2 j;
+	            p1= &j; 
+                     break;}
+       case 40:  {
+   
+		        mu j;
+	            p1= &j; 
+                     break;}
+       case 41:  {
+   
+		       li2 j;
+	            p1= &j; 
+                     break;}
+       case 42:  {
+   
+		        zhang j;
+	            p1= &j; 
+                     break;}
+       case 43:  {
+    
+		        chi2 j;
+	            p1= &j; 
+                     break;}
+       case 44:  {
+    
+		       cun2 j;
+	            p1= &j; 
+                     break;}
+       case 45:  {
+     
+		        in2 j;
+	            p1= &j; 
+                     break;}
+       case 46:  {
+
+		      lili2 j;
+	            p1= &j; 
+                     break;}
+       case 47:  {
+    
+		         hao2 j;
+	            p1= &j; 
+                     break;}
+       case 48:  {
+       
+		        liter j;
+	            p1= &j; 
+                     break;}
+       case 49:  {
+       
+		         dm3 j;
+	            p1= &j; 
+                     break;}
+       case 50:  {
+     
+		         cm3 j;
+	            p1= &j; 
+
+            break;}
+       case 51:  {
+       
+		        mm3 j;
+	            p1= &j; 
+                     break;}
+       case 52:  {
+      
+		         ft3 j;
+	            p1= &j; 
+                     break;}
+       case 53:  {
+     
+		         in3 j;
+	            p1= &j; 
+                     break;}
+       case 54:  {
+       	
+		         muchi j;
+	            p1= &j; 
+                     break;}
+       case 55:  {
+       	
+		         bbl j;
+	            p1= &j; 
+                     break;}
+       case 56:  {
+       	
+		         mgal j;
+	            p1= &j; 
+                     break;}
+       case 57:  {
+    
+		        qt j;
+	            p1= &j; 
+                     break;}
+       case 58:  {
+       	
+		        pt j;
+	            p1= &j; 
+
+        break;}
+       case 59:  {
+   
+		         gi j;
+	            p1= &j; 
+	      
+                     break;}
+       case 60:  {
+       
+		         ygal j;
+	            p1= &j; 
+	    
+                     break;}
+       case 61:  {
+dou j;
+	            p1= &j; 
+                     break;}
+       case 62:  {
+dan j;
+	            p1= &j; 
+	   
+                     break;}
+       case 63:  {
+hu j;
+	            p1= &j; 
+	  
+                     break;}
+       case 64:  {
+yue j;
+	            p1= &j; 
+	 
+                     break;}
+       case 65:  {
+he j;
+	            p1= &j; 
+                     break;}
+       case 66:  {
+gcm3 j;
+	            p1= &j; 
+	     
+                     break;}
+       case 67:  {
+lbft3 j;
+	            p1= &j; 
+	           
+                     break;}
+       case 68:  {
+lbft3 j;
+	            p1= &j; 
+	      
+                     break;}
+       case 69:  {
+lbmgal3 j;
+	            p1= &j; 
+	       
+                     break;}
+       case 70:  {
+lbygal3 j;
+	            p1= &j; 
+	         
+                     break;}
+       case 71:  {
+lbbbl3 j;
+	            p1= &j; 
+	      
+                     break;}
+       case 72:  {
+lbf j;
+	            p1= &j; 
+	 
+                     break;}
+       case 73:  {
+kgf j;
+	            p1= &j; 
+	  
+                     break;}
+       case 74:  {
+dayin j;
+	            p1= &j; 
+	         
+                     break;}
+     }
+
+     aa=p1->Get();
+     
+     
+     
+     
+    switch(n3)    {
+       case 1: {
+   
+		 jiben m;
+	            p2= &m; 
+	         
+                     break;}
+       case 2: {
+   
+		 g m;
+	            p2= &m; 
+                     break;
+     }
+            case 3:  {
+		        longton m;
+	            p2= &m; 
+	  
+                     break;}
+       case 4:  {
+		         lb m;
+	            p2= &m; 
+	         
+                     break;}					                      
+       case 5:  {
+
+		         oz m;
+	            p2= &m; 
+	       
+                     break;} 
+       case 6:  {
+		        shton m;
+	            p2= &m; 
+	     
+                     break;}
+       case 7:  {
+		         t m;
+	            p2= &m; 
+	   
+                     break;}
+       case 8:  {
+       	
+		        km m;
+	            p2= &m; 
+	        
+                     break;}
+       case 9:  {
+ 
+		         mile m;
+	            p2= &m; 
+	        
+                     break;}
+       case 10:  {
+       	
+		         jiben m;
+	            p2= &m; 
+	        
+                     break;}
+       case 11:  {
+    
+		        yd m;
+	            p2= &m; 
+	         
+                     break;}
+       case 12:  {
+  
+		         cm m;
+	            p2= &m; 
+	         
+                     break;}
+       case 13:  {
+    
+		        dmmcmm m;
+	            p2= &m; 
+	       
+                     break;}
+       case 14:  {
+     
+		      in m;
+	            p2= &m; 
+	        
+                     break;}
+       case 15:  {
+
+		        mm m;
+	            p2= &m; 
+	         
+                     break;}
+       case 16:  {
+      
+		        nm m;
+	            p2= &m; 
+	          
+                     break;}
+       case 17:  {
+       	
+		         mium m;
+	            p2= &m; 
+	         
+                     break;}
+       case 18:  {
+      
+		         aimi m;
+	            p2= &m; 
+	   
+                     break;}
+       case 19:  {
+
+		      fm m;
+	            p2= &m; 
+	        
+                     break;}
+       case 20:  {
+ 
+		    nmile m;
+	            p2= &m; 
+	           
+                     break;}
+       case 21:  {
+  
+		        lian m;
+	            p2= &m; 
+	     
+                     break;}
+       case 22:  {
+   
+		        mil m;
+	            p2= &m; 
+	         
+                     break;}
+       case 23:  {
+
+		         rad m;
+	            p2= &m; 
+	 
+                     break;}
+       case 24:  {
+ 
+		      li m;
+	            p2= &m; 
+	          
+                     break;}
+       case 25:  {
+		        zhang m;
+	            p2= &m; 
+	   
+                     break;}
+       case 26:  {
+     
+		        chi m;
+	            p2= &m; 
+	        
+                     break;}
+       case 27:  {
+       
+		         cun m;
+	            p2= &m; 
+                     break;}
+       case 28:  {
+      
+		      fen m;
+	            p2= &m; 
+	       
+                     break;}
+       case 29:  {
+   
+		        lili m;
+	            p2= &m; 
+	         
+                     break;}
+       case 30:  {
+     
+		       hao m;
+	            p2= &m; 
+	         
+                     break;}
+       case 31:  {
+ 
+		         km2 m;
+	            p2= &m; 
+	      
+                     break;}
+       case 32:  {
+      
+		        ha m;
+	            p2= &m; 
+	        
+                     break;}
+       case 33:  {
+
+		      mile2 m;
+	            p2= &m; 
+	          
+                     break;}
+       case 34:  {
+  
+		        acre m;
+	            p2= &m; 
+	        
+                     break;}                     
+       case 35:  {
+    
+		        ft2 m;
+	            p2= &m; 
+	          
+                     break;}
+       case 36:  {
+ 
+		         are m;
+	            p2= &m; 
+	       
+                     break;}
+       case 37:  {
+      
+		        cm2 m;
+	            p2= &m; 
+	         
+                     break;}
+       case 38:  {
+     
+		        in2 m;
+	            p2= &m; 
+	         
+                     break;}
+       case 39:  {
+       
+		         yd2 m;
+	            p2= &m; 
+	            
+                     break;}
+       case 40:  {
+   
+		        mu m;
+	            p2= &m; 
+
+                     break;}
+       case 41:  {
+   
+		       li2 m;
+	            p2= &m; 
+	 
+                     break;}
+       case 42:  {
+   
+		        zhang m;
+	            p2= &m; 
+                     break;}
+       case 43:  {
+    
+		        chi2 m;
+	            p2= &m; 
+                     break;}
+       case 44:  {
+    
+		       cun2 m;
+	            p2= &m; 
+                     break;}
+       case 45:  {
+     
+		        in2 m;
+	            p2= &m; 
+                     break;}
+       case 46:  {
+
+		      lili2 m;
+	            p2= &m; 
+                     break;}
+       case 47:  {
+    
+		         hao2 m;
+	            p2= &m; 
+                     break;}
+       case 48:  {
+       
+		        liter m;
+	            p2= &m; 
+                     break;}
+       case 49:  {
+       
+		         dm3 m;
+	            p2= &m; 
+                     break;}
+       case 50:  {
+     
+		         cm3 m;
+	            p2= &m; 
+                     break;}
+       case 51:  {
+       
+		        mm3 m;
+	            p2= &m; 
+                     break;}
+       case 52:  {
+      
+		         ft3 m;
+	            p2= &m; 
+	    
+                     break;}
+       case 53:  {
+     
+		         in3 m;
+	            p2= &m; 
+	      
+                     break;}
+       case 54:  {
+       	
+		         muchi m;
+	            p2= &m; 
+	       
+                     break;}
+       case 55:  {
+       	
+		         bbl m;
+	            p2= &m; 
+	       
+                     break;}
+       case 56:  {
+       	
+		         mgal m;
+	            p2= &m; 
+	          
+                     break;}
+       case 57:  {
+    
+		        qt m;
+	            p2= &m; 
+	 
+                     break;}
+       case 58:  {
+       	
+		        pt m;
+	            p2= &m; 
+	        
+                     break;}
+       case 59:  {
+   
+		         gi m;
+	            p2= &m; 
+	        
+                     break;}
+       case 60:  {
+       
+		         ygal m;
+	            p2= &m; 
+	         
+                     break;}
+       case 61:  {
+dou m;
+	            p2= &m; 
+	       
+                     break;}
+       case 62:  {
+dan m;
+	            p2= &m; 
+	       
+                     break;}
+       case 63:  {
+hu m;
+	            p2= &m; 
+	      
+                     break;}
+       case 64:  {
+yue m;
+	            p2= &m; 
+	          
+                     break;}
+       case 65:  {
+he m;
+	            p2= &m; 
+	          
+                     break;}
+       case 66:  {
+gcm3 m;
+	            p2= &m; 
+	         
+                     break;}
+       case 67:  {
+lbft3 m;
+	            p2= &m; 
+	         
+                     break;}
+       case 68:  {
+lbmgal3 m;
+	            p2= &m; 
+                     break;}
+       case 69:  {
+lbmgal3 m;
+	            p2= &m; 
+	      
+                     break;}
+       case 70:  {
+lbygal3 m;
+	         
+                     break;}
+       case 71:  {
+lbbbl3 m;
+	            p2= &m; 
+	         
+                     break;}
+       case 72:  {
+lbf m;
+	            p2= &m; 
+	         
+                     break;}
+       case 73:  {
+kgf m;
+	            p2= &m; 
+	        
+                     break;}
+       case 74:  {
+dayin m;
+	            p2= &m; 
+	        
+                     break;}
+     }
+ 
+     bb=p2->Get();
+     x1=n1*aa/bb;
+		      cout<<x1<<endl<<endl<<endl;
+		  }
+     
+            return 0;
+}
+
